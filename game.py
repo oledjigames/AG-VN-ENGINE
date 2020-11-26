@@ -45,7 +45,6 @@ SaveGame.read("SaveGame\save1.txt")
 #----------- LOGO
 IMGlogo = pygame.image.load('files\engine\logo.png')
 WHITE = (255, 255, 255)
-Sound_w = pygame.mixer.Sound('sounds/welcome.wav')
 adult_mode = str(config["Settings"]["adult"])
 
 def title():
@@ -54,8 +53,6 @@ def title():
     screen.fill(WHITE)
     screen.blit(IMGlogo, (0, 0))
     pygame.display.update()
-    if adult_mode ==('yes'):
-        Sound_w.play()
     time.sleep(3)
     level_selected = 1 
 title()
@@ -393,10 +390,8 @@ print(time.strftime("%Y-%m-%d-%H.%M.%S") +"[Game complete loaded]")
 logging.info(time.strftime("%Y-%m-%d-%H.%M.%S") +"[Game complete loaded]")
 print_info("--------------------------------------------------------------------")
 running = True
-while running:
-    timer += 1
-    mousex, mousey = pygame.mouse.get_pos()
-	#-------------------------------------------------------------Main dialogs (not sound, music)
+
+def dialogs_while():
     dialog1 = dialog(2, "Влад", "Уххх, давно не выходил на улицу", '', '', background1, player_empty, 0, player_empty, 0)
     dialog1 = dialog(3, "Влад", "Надо выйти подышать свежим воздухом и купить продукты для выживание.",
 		'Ибо могу сдохнуть от голода', '', background2, player_empty, 0, player_empty, 0)
@@ -455,10 +450,30 @@ while running:
     dialog1 = dialog(250, "", "https://vk.com/ag__games", 'ссылка откроется в браузере', '', background1, player_empty, 0, player_empty, 0)
     dialog1 = start_script(250, "webbrowser.open('https://vk.com/ag__games', new=1)")
     dialog1 = dialog_set(251, 1)
+    dialog1.show()
+
+def audio_click():
+    play_music1 = play_music(12, MUS_gameover)
+    play_music1 = play_music(113, MUS_gameover)
+    play_music1 = play_music(5, MUS_ambient)
+    play_music1 = play_music(205, MUS_end)
+    play_sound1 = play_sound(4, Sound_door_o)
+    play_sound1 = play_sound(5, Sound_door_c)
+    play_sound1 = play_sound(11, Dgl_slap)
+    play_sound1 = play_sound(111, Dgl_slap)
+    play_sound1 = play_sound(217, good_work)
+    stop_music1 = stop_music(5000)
+    play_sound1.play_sounds
+    play_music1.play_musics
+    stop_music1.stop_musics
+
+while running:
+    timer += 1
+    mousex, mousey = pygame.mouse.get_pos()
 	#game over
     show_fps(screen, clock)
 		#-------------------------------------------------------------End dialogs
-    dialog1.show()
+    dialogs_while()
     if level_selected==(1):
         reset_choice()
         pygame.mixer.music.stop()
@@ -494,25 +509,13 @@ while running:
                     pass
                 print("[Level:" + str(level_selected) + "]")
                 run_once1 = True
-                play_music1 = play_music(12, MUS_gameover)
-                play_music1 = play_music(113, MUS_gameover)
-                play_music1 = play_music(5, MUS_ambient)
-                play_music1 = play_music(205, MUS_end)
-                play_sound1 = play_sound(4, Sound_door_o)
-                play_sound1 = play_sound(5, Sound_door_c)
-                play_sound1 = play_sound(11, Dgl_slap)
-                play_sound1 = play_sound(111, Dgl_slap)
-                play_sound1 = play_sound(217, good_work)
-                stop_music1 = stop_music(5000)
-                play_sound1.play_sounds
-                play_music1.play_musics
-                stop_music1.stop_musics
+                audio_click()
             elif i.button == 3:
                 Hide_text = not Hide_text
         if i.type == pygame.KEYDOWN:
             if i.key == pygame.K_F2:
                 Sscreenshot.play()
-                pygame.image.save(screen,"screenshots/"+ str(random.randint(0, 99999999999999)) +".png")
+                pygame.image.save(screen,"screenshots/"+ time.strftime("%Y-%m-%d-%H.%M.%S") +".png")
             if i.key == pygame.K_F5:
                 SaveGame['Level'] = {'Level_selected': int(level_selected), 'Music_playing': str(music_playing),
 					'choice_1': choice_1, 'choice_2': choice_2, 'choice_3': choice_3, 'choice_4': choice_4, 'choice_5': choice_5, 
