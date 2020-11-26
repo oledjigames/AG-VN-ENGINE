@@ -1,0 +1,14 @@
+[Level]
+level_selected = 101
+music_playing = music/ambient.mp3
+choice_1 = [0, 1]
+choice_2 = [0, 1]
+choice_3 = [0, 1]
+choice_4 = [1, 0]
+choice_5 = [0, 0]
+choice_6 = [0, 0]
+choice_7 = [0, 0]
+choice_8 = [0, 0]
+choice_9 = [0, 0]
+choice_10 = [0, 0]
+
