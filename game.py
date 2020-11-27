@@ -392,77 +392,13 @@ print_info("--------------------------------------------------------------------
 running = True
 
 def dialogs_while():
-    dialog1 = dialog(2, "Влад", "Уххх, давно не выходил на улицу", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(3, "Влад", "Надо выйти подышать свежим воздухом и купить продукты для выживание.",
-		'Ибо могу сдохнуть от голода', '', background2, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(4, "", "*Открытие двери*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(5, "Влад", "", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(6, "Гопник", "О лохозавр, я ваще думал, что в этой хате никто не чилит", '', '', background3, player1, 0, player_empty, 0)
-    dialog1 = choice(7, "Отстань от меня", "Даров", choice_1, background3, player1, 0, player0, 0)
-    dialog1 = dialog_after_choice(8, "Гопник", "Воу, а че так начали высоко интеллектуальный диалог?", '', '', 
-		choice_1, "Гопник", "Здарово, а мы знакомы? Ну я как вижу ты норм чел, так что я не буду к тебе ", 
-			'негативен, ибо, зная россиян они просто пытаются пройти мимо меня, и они ', 'даже не знают о моей истории жизни...', background3, player0, 0, player1, 0)
-    dialog1 = dialog_set_after_choice(9, 10, choice_1, 100)
-    dialog1 = dialog(10, "", "", '', '', background3, player1_a, 0, player_empty, 0)
-    dialog1 = dialog(11, "", "*Ударил в глаз*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(12, "", "", '', '', gameover_screen, player_empty, 0, player_empty, 0)
-    dialog1 = dialog_set(13, 1)
-    dialog1 = dialog(100, "Сергей", "Меня вообще зовут Сергей, и куда собираешься идти?", '', '', background3, player1, 0, player_empty, 0)
-    dialog1 = choice(101, "В магазин", "Тебе какое дело до меня?", choice_2, background3, player1, 0, player0, 0)
-    dialog1 = dialog_after_choice(102, "Гопник", "Ну ок задерживать не стану иди", '', '', 
-		choice_2, "Гопник", "Воу Воу, а че на такой язык перешли? что-за негатив чел? ладно дуй отсюда.", '', '', background3, player0, 0, player1, 0)
-    dialog1 = dialog(103, "Влад", "/Ну вот я у лестницы/", '', '', background4, player_empty, 0, player_empty, 0)
-    dialog1 = choice(104, "Подняться", "Спустится", choice_3, background4, player_empty, 0, player_empty, 0)
-    dialog1 = dialog_after_choice(105, "Влад", "/Ну вот я поднялся/", '', '', 
-		choice_3, "Влад", "*Спустился*", '', '', background4, player_empty, 0, player_empty, 0)
-    dialog1 = dialog_set_after_choice(106, 104, choice_3, 107)
-    dialog1 = dialog(107, "", "*Вышел и дошел до 'Четверочки'*", '*Купил еду*', '*Пошел домой*', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog_after_choice(108, "Гопник", "О привет! Ну как сходил?", '', '', 
-		choice_2, "Гопник", "Опять ты!", 'Опа а че у нас там в пакете?', '', background5, player0, 0, player1, 0)
-    dialog1 = dialog_set_after_choice(109, 200, choice_2, 110)
-    dialog1 = dialog(110, "", "", '', '', background5, player1_a, 0, player_empty, 0)
-    dialog1 = dialog(111, "", "*Ударил в глаз*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(112, "Гопник", "О дошик как раз хотел похавать", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(113, "", "", '', '', gameover_screen, player_empty, 0, player_empty, 0)
-    dialog1 = dialog_set(114, 1)
-    dialog1 = choice(200, "Нормально", "*Промолчать и пройти мимо*", choice_4, background5, player1, 0, player_empty, 0)
-    dialog1 = dialog_after_choice(201, "Гопник", "Хорошо) Ну удачи тебе. Пока", '', '', 
-		choice_4, "Гопник", "чел?", '', '', background5, player0, 0, player1, 0)
-    dialog1 = dialog(202, "", "", '', '', background4, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(203, "", "", '', '', background3, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(204, "", "", '', '', background2, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(205, "", "", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(206, "", "*Положил пакет*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(207, "", "*Лег на кровать*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(208, "Влад", "Мне все это напоминает «День сурка»", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(209, "Влад", "Так много всего хочется изменить в своей жизни...", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(210, "Влад", "...", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(211, "", "*Наелся и спит*", '', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(212, "", "Подъезд", '', '', background3, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(213, "", "Вход", '', '', background5a, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(214, "", "Когда в моей жизни появится смысл?", 'Сколько мне ещё видеть все это?', 'В чем смысл?', background1, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(215, "", "", '', '', end1_screen, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(216, "", "", '', '', end2_screen, player_empty, 0, player_empty, 0)
-    dialog1 = dialog(217, "", "", '', '', end2_screen, player_empty, 0, player_empty, 0)
-    dialog1 = choice(218, "Группа вк", "В меню", choice_5, background1, player0, 0, player_empty, 0)
-    dialog1 = dialog_set_after_choice(219, 250, choice_5, 230)
-    dialog1 = dialog_set(230, 1)
-    dialog1 = dialog(250, "", "https://vk.com/ag__games", 'ссылка откроется в браузере', '', background1, player_empty, 0, player_empty, 0)
-    dialog1 = start_script(250, "webbrowser.open('https://vk.com/ag__games', new=1)")
-    dialog1 = dialog_set(251, 1)
+    dialog1 = dialog(2, "Имя", "Первая строка", '2 строка', '3 строка', background1, player0, 0, player0, 0,)
     dialog1.show()
 
 def audio_click():
-    play_music1 = play_music(12, MUS_gameover)
-    play_music1 = play_music(113, MUS_gameover)
-    play_music1 = play_music(5, MUS_ambient)
-    play_music1 = play_music(205, MUS_end)
-    play_sound1 = play_sound(4, Sound_door_o)
-    play_sound1 = play_sound(5, Sound_door_c)
-    play_sound1 = play_sound(11, Dgl_slap)
-    play_sound1 = play_sound(111, Dgl_slap)
-    play_sound1 = play_sound(217, good_work)
-    stop_music1 = stop_music(5000)
+    play_music1 = play_music(1000, None)
+    play_sound1 = play_sound(1000, None)
+    stop_music1 = stop_music(1000)
     play_sound1.play_sounds
     play_music1.play_musics
     stop_music1.stop_musics
